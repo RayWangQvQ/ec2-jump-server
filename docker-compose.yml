@@ -1,0 +1,18 @@
+version: '2.3'
+services:
+  ec2-jump-server:
+    # build:
+    #   context: .
+    #   dockerfile: Dockerfile
+    image: zai7lou/ec2-jump-server
+    container_name: "ec2-jump-server"
+    volumes:
+      - './data:/data'
+    ports:
+      - "54321:54321"
+    environment:
+      AWS_ACCESS_KEY_ID: thisisid
+      AWS_SECRET_ACCESS_KEY: thisiskey
+      JUMPSERVER_ID: i-abcde
+      TARGET_ENDPOINT: xxxx.rds.cn-north-1.amazonaws.com.cn:1433
+      VERBOSE: "false"

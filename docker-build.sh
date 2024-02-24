@@ -1,0 +1,1 @@
+docker build -t zai7lou/ec2-jump-server .
